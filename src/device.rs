@@ -61,8 +61,11 @@ pub const TEMP_OUT_H : u8= 0x41;
 pub const DEFAULT_SLAVE_ADDR: u8 = 0x68;
 /// Internal register to check slave addr
 pub const WHOAMI: u8 = 0x75;
-// Value of WHOAMI register in MPU6886
-pub const WHOAMI_VALUE_MPU6886: u8 = 0x19;
+// Value of WHOAMI register
+// MPU6050 : 0x68 (default)
+// MPU6886 : 0x19
+// MPU9250 : 0x73
+pub const WHOAMI_VALUES: [u8, 3] = [DEFAULT_SLAVE_ADDR, 0x19, 0x73];
 
 /// Describes a bit block from bit number 'bit' to 'bit'+'length'
 pub struct BitBlock {
