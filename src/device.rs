@@ -65,7 +65,9 @@ pub const WHOAMI: u8 = 0x75;
 // MPU6050 : 0x68 (default)
 // MPU6886 : 0x19
 // MPU9250 : 0x73
-pub const WHOAMI_VALUES: [u8, 3] = [DEFAULT_SLAVE_ADDR, 0x19, 0x73];
+pub const WHOAMI_VALUE_MPU6886: u8 = 0x19;
+pub const WHOAMI_VALUE_MPU9250: u8 = 0x73;
+pub const WHOAMI_VALUES: [u8, 3] = [DEFAULT_SLAVE_ADDR, WHOAMI_VALUE_MPU6886, WHOAMI_VALUE_MPU9250];
 
 /// Describes a bit block from bit number 'bit' to 'bit'+'length'
 pub struct BitBlock {

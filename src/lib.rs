@@ -436,3 +436,4 @@ where
 }
 
 pub type Mpu6886<I> = Mpu6050<I, WHOAMI_VALUE_MPU6886>;
+pub type Mpu9250<I> = Mpu6050<I, WHOAMI_VALUE_MPU9250>;
