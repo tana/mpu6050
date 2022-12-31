@@ -166,7 +166,7 @@ where
     /// Verifies device to address 0x68 with WHOAMI.addr() Register
     fn verify(&mut self) -> Result<(), Mpu6050Error<E>> {
         let address = self.read_byte(WHOAMI)?;
-        if address != WHO_AM_I_VALUE {
+        if WHOAMI_VALUES.contains(&address) {
             return Err(Mpu6050Error::InvalidChipId(address));
         }
         Ok(())
@@ -436,3 +436,4 @@ where
 }
 
 pub type Mpu6886<I> = Mpu6050<I, WHOAMI_VALUE_MPU6886>;
+pub type Mpu9250<I> = Mpu6050<I, WHOAMI_VALUE_MPU9250>;
